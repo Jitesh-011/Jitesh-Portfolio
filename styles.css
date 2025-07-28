@@ -1,0 +1,482 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Sections */
+.section {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+ul.skills-list, .certificates-list {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+}
+
+/* Dark mode */
+/* Fix: Text color in dark mode */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark header,
+body.dark footer {
+  background: #111;
+}
+
+body.dark .nav-links a {
+  color: #ccc;
+}
+
+body.dark .nav-links a:hover {
+  color: #90caf9;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark li,
+body.dark a {
+  color: #f1f1f1;
+}
+
+
+body.dark header,
+body.dark footer {
+  background: #111;
+}
+
+body.dark .nav-links a {
+  color: #ddd;
+}
+
+body.dark .nav-links a:hover {
+  color: #90caf9;
+}
+
+body.dark .project {
+  border-color: #444;
+  background: #2a2a2a;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #00bcd4;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #0097a7;
+}
+
+/* Smooth reveal for headings and paragraphs */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  #hero {
+  padding-top: 80px; /* instead of margin-top */
+}
+  /* ✅ gap above each section */
+  margin-bottom: 40px; /* ✅ gap below each section */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  scroll-snap-align: start;
+}
+
+
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.visible h2,
+.visible p,
+.visible .project,
+.visible li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#theme-toggle {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+#hero {
+  background-color: #e3f2fd;
+}
+
+#about {
+  background-color: #f1f8e9;
+}
+
+#skills {
+  background-color: #fff3e0;
+}
+
+#projects {
+  background-color: #ede7f6;
+}
+
+#certificates {
+  background-color: #e0f7fa;
+}
+
+#contact {
+  background-color: #fce4ec;
+}
+
+#hero {
+  margin-top: 60px;
+}
+
+/* DARK MODE FIX — FINAL */
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark #hero,
+body.dark #about,
+body.dark #skills,
+body.dark #projects,
+body.dark #certificates,
+body.dark #contact {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark li,
+body.dark a,
+body.dark span,
+body.dark strong {
+  color: #ffffff !important;
+}
+
+/* Light mode backgrounds */
+.about-bg {
+  background-color: #f1f8e9;
+}
+.skills-bg {
+  background-color: #fff3e0;
+}
+.projects-bg {
+  background-color: #ede7f6;
+}
+.certificates-bg {
+  background-color: #e0f7fa;
+}
+.contact-bg {
+  background-color: #fce4ec;
+}
+
+/* 🌙 Dark mode override for full width background */
+body.dark .about-bg,
+body.dark .skills-bg,
+body.dark .projects-bg,
+body.dark .certificates-bg,
+body.dark .contact-bg {
+  background-color: #1e1e1e !important;
+}
+
+/* Light mode hero background */
+.hero-bg {
+  background-color: #e3f2fd;
+}
+
+/* Dark mode hero background */
+body.dark .hero-bg {
+  background-color: #1e1e1e !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #00bcd4;
+}
+
+.project ul {
+  padding-left: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.project li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Header Layout */
+header {
+  background: #333;
+  color: white;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Navbar column layout */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* Name centered */
+.logo {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Section names below name, but close to bottom */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.2rem;
+  margin-bottom: 0.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+/* Theme toggle to the top right */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  text-align: center;
+}
+
+.theme-toggle span {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+  color: #ccc;
+}
+
+#theme-toggle {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Dark mode styling */
+body.dark header {
+  background-color: #111;
+}
+body.dark .theme-toggle span {
+  color: #aaa;
+}
+
+/* 🔁 Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .project,
+  .projects-grid {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  #theme-toggle {
+    font-size: 1rem;
+  }
+
+  .theme-toggle span {
+    font-size: 0.65rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background-color: #00bcd4;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: opacity 0.4s;
+}
+
+#scrollTopBtn:hover {
+  background-color: #0097a7;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #222;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
